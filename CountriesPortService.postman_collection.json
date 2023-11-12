@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "c7b454cc-c360-4c58-815f-fad480b0604a",
+		"name": "CountriesPortService",
+		"description": "\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10362190"
+	},
+	"item": [
+		{
+			"name": "getCountry",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\n\t\t\t\t  xmlns:gs=\"http://my-host/service-soap\">\n\t<soapenv:Header/>\n\t<soapenv:Body>\n\t\t<gs:getCountryRequest>\n\t\t\t<gs:name>a</gs:name>\n\t\t</gs:getCountryRequest>\n\t</soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CountriesPortSoap11BaseUrl}}/ws",
+					"host": [
+						"{{CountriesPortSoap11BaseUrl}}"
+					],
+					"path": [
+						"ws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCountry",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\n\t\t\t\t  xmlns:gs=\"http://my-host/service-soap\">\n\t<soapenv:Header/>\n\t<soapenv:Body>\n\t\t<gs:createCountryRequest>\n\t\t\t<gs:country>\n\t\t\t\t<gs:name>{{$randomCountry}}</gs:name>\n\t\t\t\t<gs:population>500</gs:population>\n\t\t\t\t<gs:capital>{{$randomProductName}}</gs:capital>\n\t\t\t\t<gs:currency>GBP</gs:currency>\n\t\t\t</gs:country>\n\t\t</gs:createCountryRequest>\n\t</soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CountriesPortSoap11BaseUrl}}/ws",
+					"host": [
+						"{{CountriesPortSoap11BaseUrl}}"
+					],
+					"path": [
+						"ws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rest - Create country",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"country\": {\r\n\t\t\"name\": \"{{$randomCountry}}\",\r\n\t\t\"capital\": \"{{$randomCity}}\",\r\n\t\t\"population\": 5,\r\n\t\t\"currency\": \"PEN\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host-Client}}/api/countries",
+					"host": [
+						"{{Host-Client}}"
+					],
+					"path": [
+						"api",
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rest - FIlter countries",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"country\": {\r\n\t\t\"name\": \"{{$randomCountry}}\",\r\n\t\t\"capital\": \"{{$randomCity}}\",\r\n\t\t\"population\": 5,\r\n\t\t\"currency\": \"PEN\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host-Client}}/api/countries?name=u",
+					"host": [
+						"{{Host-Client}}"
+					],
+					"path": [
+						"api",
+						"countries"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "u"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "CountriesPortSoap11BaseUrl",
+			"value": "http://localhost:8081",
+			"type": "any"
+		},
+		{
+			"key": "Host-Client",
+			"value": "http://localhost:8080"
+		}
+	]
+}

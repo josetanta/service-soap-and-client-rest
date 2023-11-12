@@ -8,18 +8,14 @@
 
 package org.systemia.servicesoap.contracts;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.*;
 
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -31,41 +27,35 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "country"
+	"country"
 })
 @XmlRootElement(name = "createCountryRequest")
 public class CreateCountryRequest {
 
-    @XmlElement(required = true)
-    protected Country country;
+	@XmlElement(required = true)
+	protected Country country;
 
-    /**
-     * Gets the value of the country property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Country }
-     *     
-     */
-    public Country getCountry() {
-        return country;
-    }
+	/**
+	 * Gets the value of the country property.
+	 *
+	 * @return possible object is
+	 * {@link Country }
+	 */
+	public Country getCountry() {
+		return country;
+	}
 
-    /**
-     * Sets the value of the country property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Country }
-     *     
-     */
-    public void setCountry(Country value) {
-        this.country = value;
-    }
+	/**
+	 * Sets the value of the country property.
+	 *
+	 * @param value allowed object is
+	 *              {@link Country }
+	 */
+	public void setCountry(Country value) {
+		this.country = value;
+	}
 
 }

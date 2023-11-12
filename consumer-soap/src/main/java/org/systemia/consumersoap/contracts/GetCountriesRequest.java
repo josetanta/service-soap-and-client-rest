@@ -8,19 +8,20 @@
 
 package org.systemia.consumersoap.contracts;
 
-import java.util.ArrayList;
-import java.util.List;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -32,45 +33,41 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "countries"
+	"countries"
 })
 @XmlRootElement(name = "getCountriesRequest")
 public class GetCountriesRequest {
 
-    protected List<Country> countries;
+	protected List<Country> countries;
 
-    /**
-     * Gets the value of the countries property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the Jakarta XML Binding object.
-     * This is why there is not a <CODE>set</CODE> method for the countries property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCountries().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Country }
-     * 
-     * 
-     */
-    public List<Country> getCountries() {
-        if (countries == null) {
-            countries = new ArrayList<Country>();
-        }
-        return this.countries;
-    }
+	/**
+	 * Gets the value of the countries property.
+	 *
+	 * <p>
+	 * This accessor method returns a reference to the live list,
+	 * not a snapshot. Therefore any modification you make to the
+	 * returned list will be present inside the Jakarta XML Binding object.
+	 * This is why there is not a <CODE>set</CODE> method for the countries property.
+	 *
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * <pre>
+	 *    getCountries().add(newItem);
+	 * </pre>
+	 *
+	 *
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link Country }
+	 */
+	public List<Country> getCountries() {
+		if (countries == null) {
+			countries = new ArrayList<Country>();
+		}
+		return this.countries;
+	}
 
 }
